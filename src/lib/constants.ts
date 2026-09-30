@@ -5,8 +5,8 @@ export const SCHOOL_NAME = "北华航天工业学院";
 export const SCHOOL_SHORT = "华航";
 
 // Demo 登录账号（可用环境变量覆盖，本地演示专用）
-export const DEMO_EMAIL = process.env.DEMO_EMAIL ?? "demo@nciae.edu.cn";
-export const DEMO_PASSWORD = process.env.DEMO_PASSWORD ?? "demo123456";
+export const DEMO_EMAIL = process.env.DEMO_EMAIL || "";
+export const DEMO_PASSWORD = process.env.DEMO_PASSWORD || "";
 
 export interface Source {
   key: string;
