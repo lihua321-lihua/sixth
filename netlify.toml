@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# 每小时 UTC 触发一次；代码内在 cron-tick / /api/cron/tick 中转为北京时间再判断是否到发送时间
+[functions."cron-tick"]
+  schedule = "0 * * * *"
