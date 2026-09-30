@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
@@ -136,7 +137,7 @@ export function LoginForm() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 px-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 px-4">
       <div className="w-full max-w-sm rounded-2xl border bg-white p-8 shadow-sm">
         <h1 className="mb-1 text-xl font-semibold">校园热点追踪工具</h1>
         <p className="mb-6 text-sm text-zinc-500">北华航天工业学院</p>
@@ -248,7 +249,7 @@ export function LoginForm() {
               一键 Demo 登录
             </button>
             <p className="mt-3 text-xs text-zinc-400">
-              已关闭邮箱确认。Demo 登录将预置学校配置与 3 天示例历史日报。
+              Demo 登录将预置学校配置与 3 天示例历史日报。
             </p>
           </>
         ) : (
@@ -271,6 +272,13 @@ export function LoginForm() {
           </button>
         )}
       </div>
+
+      <Link
+        href="/about"
+        className="mt-4 text-xs text-zinc-400 underline decoration-zinc-300 underline-offset-2 transition-colors hover:text-zinc-600"
+      >
+        产品说明
+      </Link>
     </div>
   );
 }
